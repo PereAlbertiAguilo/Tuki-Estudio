@@ -5,6 +5,10 @@ const dropdownIcon = document.querySelectorAll('#navbar__show__icon');
 const serviciosDropdownMenu = document.querySelector('.servicios__dropdown__menu');
 const serviciosDropdownBtn = document.querySelector('#servicios__dropdown__btn');
 
+const carouselBtns = document.querySelectorAll('[data-carousel-btn]')
+
+//Navbar dropdown
+
 dropdownBtn.addEventListener('click', () =>{
     dropdownMenu.classList.toggle('hide')
 })
@@ -12,117 +16,24 @@ dropdownBtn.addEventListener('click', () =>{
 serviciosDropdownBtn.addEventListener('click', () =>{
     serviciosDropdownMenu.classList.toggle('hide')
 })
-/*
 
-function ShowNavBar(){
-    if(navbarDropdwonActive == true)
-    {
-        Hide();
-    }
-    else
-    {
-        Show();
-    }
-}
 
-if(navbarDropdwonActive == true){
-    document.addEventListener('click', e =>{
-        if(!dropdownMenu.contains(e.target)){
-            dropdownMenu.classList.add('hide')
-        }
+//Carousel
+
+carouselBtns.forEach(btn => {
+    btn.addEventListener("click", () =>{
+        const offset = btn.dataset.carouselBtn == "next" ? 1 : -1;
+        const slides = btn
+        .closest("[data-carousel]")
+        .querySelector("[data-slides]");
+
+        const activeSlide = slides.querySelector("[data-active]");
+        let newIndex = [...slides.children].indexOf(activeSlide) + offset;
+
+        if (newIndex < 0) newIndex = slides.children.length - 1;
+        if (newIndex >= slides.children.length) newIndex = 0;
+
+        slides.children[newIndex].dataset.active = true;
+        delete activeSlide.dataset.active;
     })
-}
-
-function Hide()
-{
-    navbarDropdwonActive = false;
-    navbarShowIcon.style.transform = 'rotate(0deg)';
-    navbarShowIcon.style.transition = 'all 0.3s ease';
-    dropdownMenu.style.display = 'none';
-    dropdownMenu.style.transition = 'all .4s ease';
-}
-function Show()
-{
-    navbarDropdwonActive = true;
-    
-    dropdownMenu.style.display = 'flex';
-    dropdownMenu.style.transition = 'all .4s ease';
-}
-
-function ShowServicesNavBar(){
-    if(navbarServicesDropdwonActive == true)
-    {
-        HideServices();
-    }
-    else
-    {
-        ShowServices();
-    }
-}
-
-function HideServices()
-{
-    navbarServicesDropdwonActive = false;
-ios.style.display = 'none';
-ios.style.transition = 'all .4s ease';
-}
-function ShowServices()
-{
-    navbarServicesDropdwonActive = true;
-ios.style.display = 'flex';
-ios.style.transition = 'all .4s ease';
-}
-*/
-/*
-document.addEventListener('click', e =>{
-    if(!dropdownMenu.contains(e.target) && e.target !== d){
-        dropdownMenu.classList.add('hide');
-    }
 })
-
-/*
-const navbarShowIcon = document.querySelector('#navbar_icon');
-
-
-window.onresize = CloseDropdown;
-window.onscroll = CloseDropdown;
-
-function CloseDropdown(){
-    if(navbarDropdwonActive == true){        
-        Hide();
-    }
-}
-
-function ShowNavBar(){
-    if(navbarDropdwonActive == true)
-    {
-        Hide();
-    }
-    else
-    {
-        Show();
-    }
-}
-
-function Hide()
-{
-    navbarDropdwonActive = false;
-    
-    navbarShowIcon.style.transform = 'rotate(0deg)';
-    navbarShowIcon.style.transition = 'all 0.3s ease';
-    
-    dropdownMenu.style.display = 'none';
-    dropdownMenu.style.transition = 'all .4s ease';
-}
-function Show()
-{
-    navbarDropdwonActive = true;
-    
-    navbarShowIcon.style.transition = 'all 0.3s ease';
-    navbarShowIcon.style.transform = 'rotate(90deg)';
-    
-    dropdownMenu.style.display = 'flex';
-    dropdownMenu.style.transition = 'all .4s ease';
-}
-*/
-

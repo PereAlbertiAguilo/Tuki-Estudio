@@ -21,7 +21,7 @@ html{
 }
 
 body{
-    background-image: linear-gradient(#1e1839 95%, #000000);
+    background-image: linear-gradient(#1e1839 85%, #000000);
 }
 
 nav{
@@ -143,7 +143,13 @@ nav{
     font-weight: bolder;
     font-size: 3em;
     padding: 80px 40px;
+    text-shadow:
+    1px 1px 2px #000000,
+    -1px -1px 2px #000000,
+    0 10px 1.5em #ffffff,
+    0 -10px 1.5em #ffffff;
 }
+
 .servicios__menu{
     display: flex;
     justify-content: center;
@@ -181,7 +187,7 @@ nav{
 .servicio__text__container{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background-color: #0c0a1834;
     backdrop-filter: blur(8px);
     width: 500px;
@@ -284,13 +290,18 @@ nav{
         margin-bottom: 80px;
     }
     .servicio_link{
-        width: 70px;
+        width: 85px;
         height: 35px;
         border-radius: 10px;
         font-size: 1em; 
+        margin: 10px 20px;
     }
     .servicio__text{
         display: none;
+    }
+    #servicios__texts{
+        text-wrap: nowrap;
+        padding: 10px 20px;
     }
 }
 
@@ -304,6 +315,7 @@ nav{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    padding-bottom: 50px;
 }
 
 .empresa{
@@ -321,10 +333,10 @@ nav{
 
 .empresa__img{
     margin-top: 40px;
-    height: auto;
+    height: 300px;
     width: 300px;
     background-position:center;
-    background-size: cover;
+    object-fit: cover;
     box-shadow: 0px 5px 30px rgb(0, 0, 0, 0.6), 0px 5px 30px rgba(0, 0, 0, 0.6);
     border-radius: 20px;
     transition: all 0.3s ease;
@@ -380,6 +392,11 @@ nav{
     row-gap: 20px;
 }
 
+#quote{
+    font-style: italic;
+    font-size: .8em;
+}
+
 @media (max-width: 1465px){
     .about__menu{
         display: flex;
@@ -409,7 +426,7 @@ nav{
     flex-direction: row;
     justify-content: space-evenly;
     align-items: flex-start;
-    height: 300px;
+    height: auto;
 }
 .footer__column{
     display: flex;
@@ -430,4 +447,143 @@ nav{
 .footer__text:hover{
     color:rgb(173, 106, 236);
     transition: color 0.3s ease;
+}
+
+@media (max-width: 575px){
+    .footer__menu{
+        flex-direction: column;
+        align-items: center;
+        row-gap: 80px;
+        padding-bottom: 50px;
+        text-align: center;
+    }
+}
+
+#servicio__concreto{
+    padding-top: 100px;
+    margin: 0;
+}
+
+#servicio__concreto img{
+    position: absolute;
+    background-position: center;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -99;
+}
+.servicio__concreto__menu{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0px 10px 30px rgb(0, 0, 0, 0.6), 0px -10px 30px rgba(0, 0, 0, 0.6);
+}
+
+#text_right{
+    text-align: end;
+}
+
+.servicio__concreto__p{
+    width: 35%;
+    font-weight: bolder;
+    padding: 50px 40px;
+    padding-bottom: 50%;
+    text-align: start;
+    text-shadow:
+    1px 1px 2px black,
+    0 0 1em #000000,
+    0 0 0.2em #000000;
+}
+
+
+
+@media (max-width: 660px){
+    .servicio__concreto__menu{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .servicio__concreto__p{
+        width: 100%;
+        padding: 50px 30px;
+        padding-right: 150px;
+    }
+
+    #text_right{
+        text-align: start;
+        padding-right: 30px;
+        padding-left: 150px;
+    }
+}
+
+#text_right{
+    text-align: end;
+}
+
+.carousel{
+    height: 800px;
+    position: relative;
+}
+
+.carousel > ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.slide{
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    transition-delay: 0.2s;
+}
+
+.slide[data-active]{
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0s;
+}
+
+.slide > img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel__btn{
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff6b;
+    cursor: pointer;
+    border-radius: .25rem;
+    padding: 0 .5rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.carousel__btn:hover,
+.carousel__btn:focus{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.carousel__btn:focus{
+    outline: 1px solid black;
+}
+
+.carousel__btn.prev{
+    left: 1rem;
+}
+
+.carousel__btn.next{
+    right: 1rem;
 }
