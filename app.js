@@ -22,7 +22,7 @@ serviciosDropdownBtn.addEventListener('click', () =>{
 
 carouselBtns.forEach(btn => {
     btn.addEventListener("click", () =>{
-        const offset = btn.dataset.carouselBtn == "next" ? 1 : -1;
+        const offset = btn.dataset.carouselBtn === "next" ? 1 : -1;
         const slides = btn
         .closest("[data-carousel]")
         .querySelector("[data-slides]");
