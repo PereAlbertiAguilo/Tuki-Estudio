@@ -20,28 +20,33 @@
             </div>
         </div>
         <div class="dropdown">
-            <button class="dropdown_btn"><img class="dropdown_icon" src="images/bars-solid.svg" alt="dropdown button"></button>
-            <div class="dropdown__menu hide">
-                <a href="index.html" class="dropdown__link">Home</a>
-                <div class="servicios__dropdown">
-                    <button class="dropdown__link" id="servicios__dropdown__btn">Servicios</button>
-                    <div class="servicios__dropdown__menu hide">
-                        <a href="estudio_musical.html" class="dropdown__link">Estudio Musical</a>
-                        <a href="video_promocional.html" class="dropdown__link">Video Promocional</a>
-                        <a href="videoclip.html" class="dropdown__link">Videoclip</a>
-                        <a href="fotografia.html" class="dropdown__link">Fotografía</a>
+            <button class="dropdown_btn"><img class="dropdown_icon animate fadeIn" src="images/bars-solid.svg" alt="dropdown button"></button>
+            <div class="hidden animate hide animate--fast">
+                <div class="dropdown__menu animate slideFromRight animate--fast">
+                    <a href="index.html" class="dropdown__link">Home</a>
+                    <div class="servicios__dropdown">
+                        <button class="dropdown__link" id="servicios__dropdown__btn">Servicios</button>
+                        <div class="animate serviciosHide animate--fast">
+                            <div class="servicios__dropdown__menu animate slideFromRightOffset animate--fast">
+                                <a href="estudio_musical.html" class="dropdown__link">Estudio Musical</a>
+                                <a href="video_promocional.html" class="dropdown__link">Video Promocional</a>
+                                <a href="videoclip.html" class="dropdown__link">Videoclip</a>
+                                <a href="fotografia.html" class="dropdown__link">Fotografía</a>
+                            </div>
+                        </div>
                     </div>
+                    <a href="about.html" class="dropdown__link">Sobre Nosotros</a>
+                    <a href="#footer" class="dropdown__link">Contacto</a>
                 </div>
-                <a href="#about" class="dropdown__link">Sobre Nosotros</a>
-                <a href="#footer" class="dropdown__link">Contacto</a>
             </div>
+            
         </div>
     </nav>
 
     <section class="section" id="servicio__concreto">
         <h1 class="section__header">Estudio Musical</h1>
         <div class="servicio__concreto__menu">
-            <img src="images/Foto Vespres.jpg" alt="">
+            <img src="images/Foto Vespres.jpg" alt="imagen de fondo de estudio musical">
             <p class="servicio__concreto__p">
                 Llevamos a cabo, fotografía para artistas, portadas, retratos, empresas...
                 <br><br>
@@ -64,17 +69,19 @@
             <button class="carousel__btn next" data-carousel-btn="next">&#8680</button>
             <ul data-slides>
                 <li class="slide" data-active>
-                    <img src="images/Lidia Videoclip 2_3.13.1.jpg" alt="">
+                    <img src="images/Lidia Videoclip 2_3.13.1.jpg" alt="imagen de carrousel 1">
                 </li>
                 <li class="slide">
-                    <img src="images/Lidia Videoclip 3_3.12.1.jpg" alt="">
+                    <img src="images/Lidia Videoclip 3_3.12.1.jpg" alt="imagen de carrousel 2">
                 </li>
                 <li class="slide">
-                    <img src="images/Lidia Videoclip 4_2.24.1.jpg" alt="">
+                    <img src="images/Lidia Videoclip 4_2.24.1.jpg" alt="imagen de carrousel 3">
                 </li>
             </ul>
         </div>
         <div class="galeria__menu">
+            <span class="blur"></span>
+
             <div class="galeria__item">
                 <h3 class="galeria__item__text">
                     grabación, mezcla y <br>
@@ -82,12 +89,12 @@
                     temazo de pofer y lidia
                 </h3>
                 <h3 class="galeria__item__text" id="flecha">&#10161</h3>
-                <a href=""><img class="galeria__img" src="images/Lidia Videoclip_2.11.1.jpg" alt=""></a>
+                <a href=""><img class="galeria__img" src="images/Lidia Videoclip_2.11.1.jpg" alt="imagen de galeria 1"></a>
                 <span class="blur"></span>
             </div>
             <div class="galeria__item" id="item__left">
                 <span class="blur"></span>
-                <a href=""><img class="galeria__img" src="images/Lidia Videoclip 3_3.12.1.jpg" alt=""></a>
+                <a href=""><img class="galeria__img" src="images/Lidia Videoclip 3_3.12.1.jpg" alt="imagen de galeria 2"></a>
                 <h3 class="galeria__item__text left" id="flecha">&#10161</h3>
                 <h3 class="galeria__item__text">
                     grabación, mezcla y <br>
@@ -102,46 +109,10 @@
                     temazo de amelie horn
                 </h3>
                 <h3 class="galeria__item__text" id="flecha">&#10161</h3>
-                <a href=""><img class="galeria__img" src="images/Lidia Videoclip 4_2.24.1.jpg" alt=""></a>
+                <a href=""><img class="galeria__img" src="images/Lidia Videoclip 4_2.24.1.jpg" alt="imagen de galeria 3"></a>
                 <span class="blur"></span>
             </div>
         </div>
-    </section>
-
-    <section class="section" id="about">
-        <h1 class="section__header">Sobre Nosotros</h1>
-            <div class="about__menu">
-                <div class="about">
-                    <img class="about__img" src="images/logo lila-02.jpg" alt="">
-                    <div class="about__text__container">
-                        <h1 class="about__header">Tuki Beats</h1>
-                        <p class="about__text">
-                            Pau Mas Ferrer, guitarrista, productor y videografo. Lleva más de 3 años, en estudios 
-                            profesionales, donde ha aprendido el proceso de grabación, mezcla y master 
-                            de sonido de los mejores productores de Mallorca, entre ellos: Mateu Picornell.
-                            <br><br> 
-                            En cuanto a su formación en video, ha sido mayoritariamente autodidacta, aunque 
-                            ha consolidado algunos aspectos técnicos con ayuda de profesionales. Es una pasión 
-                            que le viene desde muy pequeño.
-                            <br>
-                        </p>
-                        <p class="about__text" id="quote">
-                            -¨No recuerdo momento en mi infancia en el que no lleváse una cámara encima¨
-                        </p>
-                    </div>
-                </div>
-                <div class="about">
-                    <img class="about__img" src="images/logo lila-02.jpg" alt="">
-                    <div class="about__text__container">
-                        <h1 class="about__header">Pere Albertí Aguiló</h1>
-                        <p class="about__text">Lorem ipsum dolor sit amet consectetur, 
-                            adipisicing elit. Id a ad sed omnis earum vitae consequatur 
-                            fugit nihil! Perspiciatis deleniti esse ut delectus aspernatur 
-                            nemo officiis, et blanditiis laborum porro.
-                        </p>
-                    </div>
-                </div>
-            </div>
     </section>
 
     <footer id="footer">
@@ -161,6 +132,6 @@
         </div>
     </footer>
     
-    <script src="app.js"></script>
+    <script defer src="app.js"></script>
 </body>
 </html>
