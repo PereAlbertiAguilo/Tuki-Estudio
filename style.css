@@ -75,7 +75,7 @@ button{
 @keyframes hide {
 
     0%{
-        display: block;
+        display: flex;
     }
     100%{
         display: none;
@@ -96,7 +96,7 @@ button{
         display: none;
     }
     100%{
-        display: block;
+        display: flex;
     }
 }
 
@@ -124,11 +124,13 @@ button{
 
     from {
         transform: translateX(-20px);
+        width: 120%;
         opacity: 1;
     }
   
     to {
         transform: translateX(300px);
+        width: 100%;
         opacity: 0;
     }
   
@@ -158,11 +160,13 @@ button{
 
     from {
         transform: translateX(300px);
+        width: 100%;
         opacity: 0;
     }
   
     to {
         transform: translateX(-20px);
+        width: 120%;
         opacity: 1;
     }
   
@@ -204,6 +208,7 @@ html{
 
 body{
     background-image: linear-gradient(var(--clr-bg-dark) 80%, var(--clr-dark));
+    min-width: 350px;
 }
 
 /* Navbar */
@@ -251,10 +256,16 @@ nav{
     flex-wrap:wrap;
 }
 
+.dropdown_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .dropdown_icon{
-    height: 95px;
-    padding: 30px 0px;
-    padding-right: 30px;
+    height: 40px;
+    width: 40px;
+    margin: 20px;
     filter:brightness(50%);
     transition: 0.3s;
 }
@@ -265,7 +276,6 @@ nav{
 }
 
 .dropdown__menu{
-    transform: translateX(0px);
     background-color: var(--clr-bg-dark);
     box-shadow: -2px 10px 30px var(--clr-dark);
     width: 300px;
@@ -274,12 +284,11 @@ nav{
 }
 
 .servicios__dropdown__menu{
-    background-color: var(--clr-bg-bright);
+    background-image: linear-gradient(to right, var(--clr-bg-bright) 40%, rgba(0, 0, 0, 0));
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
-    transform: translateX(-20%);
     width: 120%;
-    box-shadow: -2px 10px 30px var(--clr-dark), -2px -10px 30px var(--clr-dark);
+    /* box-shadow: -2px 10px 30px var(--clr-dark), -2px -10px 30px var(--clr-dark); */
 }
 
 .hidden{
@@ -313,15 +322,29 @@ nav{
 }
 
 @media (max-width: 744px) {
+
+    nav{
+        height: 75px;
+    }
     .header__text{
-        font-size: 0.7rem;
+        font-size: 0.6rem;
         transform-origin: left;
         transition: 0.3s;
     }
+    .header__text p{
+        text-wrap: wrap;
+    }
+
+    .navbar__logo img{
+        height: 75px;
+    }
+
+    .dropdown_icon{
+        height: 30px;
+    }
 
     .textShrinkLeft{
-        width: 0;
-        opacity: 0;
+        display: none;
     }
 }
 
@@ -345,14 +368,12 @@ nav{
 .section__header{
     font-weight: bolder;
     font-size: 3em;
-    padding: 120px 40px;
+    padding: 120px 40px 60px 40px;
     text-transform: uppercase;
+}
 
-    background-image: url(images/Lidia\ Videoclip\ 3_3.12.1.jpg);
-    background-size: cover;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+.section__text{
+    margin-inline: 40px;
 }
 
 @media (max-width: 600px){
@@ -363,6 +384,11 @@ nav{
 @media (max-width: 375px){
     .section__header{
         font-size: 1.3em;
+    }
+}
+@media (max-width: 744px) {
+    .welcom__video{
+        margin-top: 75px;
     }
 }
 
@@ -441,10 +467,6 @@ nav{
     border: solid 2px var(--clr-light);
     background-color: var(--clr-dark);
     transform: scale(1.05);
-}
-
-.servicio_link:hover,
-.servicio_link:focus{
 }
 
 .servicio__img:hover,
@@ -562,8 +584,8 @@ nav{
 
 .empresa__img{
     margin-top: 40px;
-    height: 300px;
-    width: 300px;
+    height: 200px;
+    width: 200px;
     background-position:center;
     object-fit: cover;
     box-shadow: 0px 5px 30px rgb(0, 0, 0, 0.6), 0px 5px 30px rgba(0, 0, 0, 0.6);

@@ -11,9 +11,10 @@ const hideServiciosMenu = document.querySelector('.serviciosHide');
 
 const carouselBtns = document.querySelectorAll('[data-carousel-btn]')
 
-const navbar = document.querySelector('#home');
+const navbar = document.querySelector('nav');
 
 const navbarHeaderText = document.querySelector('.header__text');
+const navbarHeaderLogo = document.querySelector('.navbar__logo');
 
 var lastScrollTop = 0;
 
@@ -31,11 +32,40 @@ window.addEventListener("scroll", () =>{
     lastScrollTop = scrollTop;
 })
 
+document.onscroll = HideDropdown;
+
+window.onclick = function(e){
+    if (!e.target.matches('.dropdown_btn') && 
+    !e.target.matches('.dropdown_icon') && 
+    !e.target.matches('#servicios__dropdown__btn')){
+        HideDropdown();
+    }
+};
+
+function HideDropdown(){
+    if(hideMenu.classList.contains('show')){
+        navbarHeaderText.classList.remove('textShrinkLeft')
+        navbarHeaderLogo.classList.remove('textShrinkLeft')
+        
+        dropDownIcon.classList.add('fadeIn');
+        dropDownIcon.classList.remove('fadeIn2');
+        
+        hideMenu.classList.add('hide');
+        hideMenu.classList.remove('show');
+        
+        HideServiciosDropdown();
+        
+        dropdownMenu.classList.add('slideFromRight');
+        dropdownMenu.classList.remove('slideToRight');  
+    }
+}
+
 //Navbar dropdown
 
 dropdownBtn.addEventListener('click', () =>{
 
     navbarHeaderText.classList.toggle('textShrinkLeft')
+    navbarHeaderLogo.classList.toggle('textShrinkLeft')
 
     dropDownIcon.classList.toggle('fadeIn');
     dropDownIcon.classList.toggle('fadeIn2');
@@ -43,15 +73,19 @@ dropdownBtn.addEventListener('click', () =>{
     hideMenu.classList.toggle('hide');
     hideMenu.classList.toggle('show');
 
+    HideServiciosDropdown();
+    
+    dropdownMenu.classList.toggle('slideFromRight');
+    dropdownMenu.classList.toggle('slideToRight');
+})
+
+function HideServiciosDropdown(){
     hideMenu.classList.remove('hidden');
     
     if(hideServiciosMenu.classList.contains('serviciosHide')){
         hideServiciosMenu.classList.add('hidden');
     }
-    
-    dropdownMenu.classList.toggle('slideFromRight');
-    dropdownMenu.classList.toggle('slideToRight');
-})
+}
 
 //Navbar dropdown dropdown
 
