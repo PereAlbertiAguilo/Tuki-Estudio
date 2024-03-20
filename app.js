@@ -13,6 +13,8 @@ const carouselBtns = document.querySelectorAll('[data-carousel-btn]')
 
 const navbar = document.querySelector('#home');
 
+const navbarHeaderText = document.querySelector('.header__text');
+
 var lastScrollTop = 0;
 
 // Navabar hide on scroll
@@ -32,6 +34,8 @@ window.addEventListener("scroll", () =>{
 //Navbar dropdown
 
 dropdownBtn.addEventListener('click', () =>{
+
+    navbarHeaderText.classList.toggle('textShrinkLeft')
 
     dropDownIcon.classList.toggle('fadeIn');
     dropDownIcon.classList.toggle('fadeIn2');
