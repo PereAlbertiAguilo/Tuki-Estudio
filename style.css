@@ -31,6 +31,10 @@
     letter-spacing: 1px;
 }
 
+button{
+    cursor: pointer;
+}
+
 /* Utility classes */
 
 .animate{
@@ -342,10 +346,13 @@ nav{
     font-weight: bolder;
     font-size: 3em;
     padding: 120px 40px;
-    text-shadow:
-    0 10px 1.5em var(--clr-light),
-    0 -10px 1.5em var(--clr-light);
     text-transform: uppercase;
+
+    background-image: url(images/Lidia\ Videoclip\ 3_3.12.1.jpg);
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 @media (max-width: 600px){
@@ -371,7 +378,7 @@ nav{
     justify-content: flex-start;
     align-items: flex-end;
     width: 50%;
-    transform: translateX(150px);
+    transform: translateX(200px);
 }
 
 .servicios__columna__texto{
@@ -388,7 +395,7 @@ nav{
     background-size: cover;
     width: auto;
     height: 400px;
-    margin-bottom: 120px;
+    margin-bottom: 60px;
     z-index: 1;
     border-radius: 20px;
     box-shadow: 5px 10px 40px rgb(0, 0, 0, 0.6), -5px 0px 40px rgb(0, 0, 0, 0.6);
@@ -404,7 +411,7 @@ nav{
     width: 500px;
     height: 300px;
     padding: 10px 10px;
-    margin-bottom: 120px;
+    margin-bottom: 60px;
     z-index: 2;
     border-radius: 20px;
     box-shadow: 5px 5px 40px rgb(0, 0, 0, 0.6), -5px 0px 40px rgba(0, 0, 0, 0.6);
@@ -433,6 +440,11 @@ nav{
 .servicio_link:focus{
     border: solid 2px var(--clr-light);
     background-color: var(--clr-dark);
+    transform: scale(1.05);
+}
+
+.servicio_link:hover,
+.servicio_link:focus{
 }
 
 .servicio__img:hover,
@@ -442,7 +454,7 @@ nav{
 
 @media (max-width: 1200px) {
     .servicios__columna__fotos{
-        transform: translateX(75px);
+        transform: translateX(100px);
     }
     .servicio__text__container{
         width: 400px;
@@ -487,19 +499,19 @@ nav{
 
 @media (max-width: 600px) {
     .servicios__columna__fotos{
-        transform: translateX(75px);
+        transform: translateX(110px);
     }
     .servicio__text__container{
-        width: 225px;
+        width: 175px;
         height: 125px;
         font-size: .7em;
-        margin-bottom: 80px;
-        transform: translateX(-50px);
+        margin-bottom: 40px;
+        transform: translateX(-25px);
     }
     .servicio__img{
         width: auto;
-        height: 150px;
-        margin-bottom: 80px;
+        height: 145px;
+        margin-bottom: 40px;
     }
     .servicio_link{
         width: 85px;
@@ -510,6 +522,9 @@ nav{
     }
     .servicio__text{
         display: none;
+    }
+    .servicio__header{
+        font-size: .75rem;
     }
     #servicios__texts{
         text-wrap: nowrap;
